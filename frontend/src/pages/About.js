@@ -8,7 +8,7 @@ const About = () => {
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="absolute bottom-96 w-full">
+        <div className="absolute bottom-96">
           <div className="text-center">
             <h1
               className="text-5xl sm:text-6xl font-extrabold mb-6 
