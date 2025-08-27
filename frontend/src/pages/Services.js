@@ -3,7 +3,6 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "../components/Navbar";
 import FooterOther from "../components/FooterOther";
-import ServiceFish from "../components/ServiceFish";
 
 // Assets
 import skyImg from "../assets/para/sky.png";
@@ -46,7 +45,25 @@ const services = [
     icon: "🎥",
   },
 ];
+const ServiceCard = ({ service, index, total, scrollYProgress }) => {
+  const start = index / total;
+  const end = (index + 1) / total;
 
+  const scale = useTransform(scrollYProgress, [start, end], [0.8, 1]);
+  const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
+  const y = useTransform(scrollYProgress, [start, end], [100, 0]);
+
+  return (
+    <motion.div
+      style={{ scale, opacity, y }}
+      className="absolute bg-gray-800 rounded-2xl p-10 max-w-md text-center shadow-xl"
+    >
+      <div className="text-5xl mb-4">{service.icon}</div>
+      <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+      <p className="opacity-80">{service.description}</p>
+    </motion.div>
+  );
+};
 const Services = () => {
   const ref = useRef(null);
   const { scrollY } = useScroll();
@@ -75,9 +92,14 @@ const Services = () => {
 
   // Overlay moves opposite, a bit stronger
   const overlayY = useTransform(scrollY, [0, 1000], [0, -150]);
+ 
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
 
   return (
-    <>
+    <div className="bg-gray-950">
       <Navbar />
 
       {/* Parallax Hero */}
@@ -145,20 +167,23 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services List */}
-      <section className="py-16 bg-gray-100">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Our Key Services
-        </h2>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-          {services.map((service, index) => (
-            <ServiceFish key={index} {...service} />
+     
+     {/* Card Scroll Section */}
+     <section ref={ref} className="relative h-[500vh] flex items-center justify-center">
+        <div className="sticky top-0 h-screen flex items-center justify-center">
+          {services.map((service, i) => (
+            <ServiceCard
+              key={i}
+              service={service}
+              index={i}
+              total={services.length}
+              scrollYProgress={scrollYProgress}
+            />
           ))}
         </div>
       </section>
-
       <FooterOther />
-    </>
+    </div>
   );
 };
 

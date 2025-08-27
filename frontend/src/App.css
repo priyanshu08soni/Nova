@@ -111,3 +111,8 @@ body {
 .blur-wave {
   animation: waveMotion 6s ease-in-out infinite;
 }
+
+/* Services */
+.services{
+  background-color: #0f2341;
+}
