@@ -109,20 +109,18 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 mt-4 space-y-1 backdrop-blur-md shadow-lg rounded-2xl border border-teal-50/20">
           <ul className="space-y-2">
             <Link
-              className="flex justify-center"
+              to="/"
+              className="flex justify-center navigation-links"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <a href="/" className="navigation-links">
-                Home
-              </a>
+              Home
             </Link>
             <Link
-              className="flex justify-center"
+              to = "about"
+              className="flex justify-center navigation-links"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <a href="/about" className="navigation-links">
-                About
-              </a>
+             About
             </Link>
           </ul>
 

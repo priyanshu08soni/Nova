@@ -2,7 +2,7 @@ import React from "react";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 const Footer = () => {
   return (
-    <footer className="absolute bottom-0 w-full">
+    <footer className="w-full">
       <div className="absolute max-w-full left-10 right-10 bottom-10 px-4 py-12 sm:px-6 lg:px-8  backdrop-blur-sm rounded-2xl border border-teal-100/20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
