@@ -10,6 +10,8 @@
 /coverage
 
 # production
+/frontend/build
+/backend/build
 /build
 
 /frontend/.env

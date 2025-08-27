@@ -4,10 +4,17 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Lenis from "lenis"
 import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import FooterOther from "../components/FooterOther"
 import MechanicalCursorFollower from "../components/MechanicalCursorFollower"
 import FloatingMechanicalElements from "../components/FloatingMechanicalElements"
-
+import img1 from '../assets/modern-web-development-workspace-with-multiple-mon.png'
+import img2 from '../assets/modern-laptop-with-code-editor-and-responsive-desi.png';
+import img3 from '../assets/professional-video-editing-setup-with-timeline-and.png';
+import img4 from '../assets/professional-video-production-setup-with-cameras-l.png';
+import img5 from '../assets/clean-modern-website-interface-with-responsive-des.png';
+import img6 from '../assets/creative-team-workspace-with-designers-and-develop.png';
+import img7 from '../assets/modern-web-development-workspace-with-multiple-mon.png';
+import img8 from '../assets/futuristic-digital-landscape-with-flowing-data-str.png';
 // Register GSAP plugins
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -38,6 +45,7 @@ const About = () => {
 
     // GSAP Animations
     const ctx = gsap.context(() => {
+      // Hero section animations
       gsap.fromTo(
         ".hero-title",
         { y: 100, opacity: 0 },
@@ -131,8 +139,143 @@ const About = () => {
         },
       )
 
-      // parallax, rotations, pistons, vision, etc.
-      // ... (all the rest of your GSAP animations remain unchanged)
+      gsap.to(".parallax-ultra-slow", {
+        yPercent: -15,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 0.5,
+        },
+      })
+
+      gsap.to(".parallax-slow", {
+        yPercent: -40,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      })
+
+      gsap.to(".parallax-medium", {
+        yPercent: -60,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1.5,
+        },
+      })
+
+      gsap.to(".parallax-fast", {
+        yPercent: -100,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 2,
+        },
+      })
+
+      gsap.to(".parallax-ultra-fast", {
+        yPercent: -150,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 3,
+        },
+      })
+
+      gsap.to(".gear-large", {
+        rotation: 360,
+        duration: 12,
+        ease: "none",
+        repeat: -1,
+      })
+
+      gsap.to(".gear-small", {
+        rotation: -360,
+        duration: 8,
+        ease: "none",
+        repeat: -1,
+      })
+
+      gsap.to(".piston-element", {
+        y: -10,
+        duration: 1.5,
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: -1,
+        stagger: 0.4,
+      })
+
+      gsap.to(".code-bracket", {
+        rotation: 360,
+        duration: 15,
+        ease: "none",
+        repeat: -1,
+      })
+
+      gsap.to(".video-play-shape", {
+        scale: 1.2,
+        duration: 2,
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: -1,
+      })
+
+      gsap.to(".design-hexagon", {
+        rotation: -360,
+        duration: 20,
+        ease: "none",
+        repeat: -1,
+      })
+
+      // Team section parallax
+      gsap.to(".team-bg", {
+        yPercent: -50,
+        ease: "none",
+        scrollTrigger: {
+          trigger: teamRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      })
+
+      // Vision section reveal
+      gsap.fromTo(
+        ".vision-text",
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: visionRef.current,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        },
+      )
+
+      // Morphing shapes
+      gsap.to(".morph-shape", {
+        rotation: 360,
+        scale: 1.2,
+        duration: 20,
+        ease: "none",
+        repeat: -1,
+      })
 
       document.querySelectorAll(".service-card").forEach((card) => {
         card.addEventListener("mouseenter", () => {
@@ -160,6 +303,12 @@ const About = () => {
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-black">
         <div className="absolute inset-0 overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-800">
+          <img
+            src={img1}
+            alt="Industrial Workspace"
+            className="absolute inset-0 w-full h-full object-cover opacity-15 blur-sm"
+          />
+
           {/* Industrial Grid Overlay */}
           <div className="absolute inset-0 opacity-20">
             <div className="grid grid-cols-20 grid-rows-20 h-full w-full">
@@ -379,19 +528,12 @@ const About = () => {
                 <div className="absolute top-4 right-4 w-2 h-2 bg-orange-500/60 rounded-full border border-orange-400/40"></div>
 
                 <div className="relative mb-6">
-                  <div className="w-full h-32 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-xl border border-gray-600 flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-cyan-500/10"></div>
-                    <div className="relative z-10 flex items-center space-x-4">
-                      <div className="w-12 h-12 border-2 border-orange-500/50 bg-orange-500/20 rounded-lg flex items-center justify-center">
-                        <div className="w-6 h-6 bg-orange-500/70 rounded transform rotate-45"></div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="w-16 h-1 bg-orange-500/60"></div>
-                        <div className="w-12 h-1 bg-cyan-400/60"></div>
-                        <div className="w-20 h-1 bg-orange-500/60"></div>
-                      </div>
-                    </div>
-                  </div>
+                  <img
+                    src={img2}
+                    alt="Web Development"
+                    className="w-full h-32 object-cover rounded-xl border border-gray-600 opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-cyan-500/20 rounded-xl"></div>
                 </div>
 
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-600 via-orange-500 to-cyan-500 rounded-lg flex items-center justify-center mb-6 border-2 border-gray-600 relative">
@@ -458,19 +600,12 @@ const About = () => {
                 <div className="absolute top-4 right-4 w-2 h-2 bg-cyan-500/60 rounded-full border border-cyan-400/40"></div>
 
                 <div className="relative mb-6">
-                  <div className="w-full h-32 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-xl border border-gray-600 flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-gray-600/10 to-cyan-500/10"></div>
-                    <div className="relative z-10 flex items-center space-x-4">
-                      <div className="w-12 h-12 border-2 border-cyan-500/50 bg-cyan-500/20 rounded-lg flex items-center justify-center">
-                        <div className="w-0 h-0 border-l-4 border-l-cyan-400 border-t-2 border-t-transparent border-b-2 border-b-transparent ml-1"></div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="w-16 h-1 bg-cyan-400/60"></div>
-                        <div className="w-12 h-1 bg-gray-500/60"></div>
-                        <div className="w-20 h-1 bg-cyan-400/60"></div>
-                      </div>
-                    </div>
-                  </div>
+                  <img
+                    src={img3}
+                    alt="Video Editing"
+                    className="w-full h-32 object-cover rounded-xl border border-gray-600 opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-600/20 to-cyan-500/20 rounded-xl"></div>
                 </div>
 
                 <div className="w-16 h-16 bg-gradient-to-br from-gray-600 via-gray-500 to-cyan-500 rounded-lg flex items-center justify-center mb-6 border-2 border-gray-600 relative">
@@ -527,12 +662,20 @@ const About = () => {
           <div className="service-details space-y-16">
             {/* Video Services Detail */}
             <div className="service-detail-left bg-black/60 backdrop-blur-sm border-2 border-gray-800 rounded-3xl p-8 relative overflow-hidden">
+              <img
+                src={img4}
+                alt="Video Production Setup"
+                className="absolute inset-0 w-full h-full object-cover opacity-5 rounded-3xl"
+              />
+
               {/* Industrial Frame */}
               <div className="absolute inset-0 border-4 border-gray-700/20 rounded-3xl"></div>
-              <div className="absolute top-2 left-2 w-4 h-4 bg-purple-500/40 border border-purple-400/60"></div>
-              <div className="absolute top-2 right-2 w-4 h-4 bg-purple-500/40 border border-purple-400/60"></div>
-              <div className="absolute bottom-2 left-2 w-4 h-4 bg-purple-500/40 border border-purple-400/60"></div>
-              <div className="absolute bottom-2 right-2 w-4 h-4 bg-purple-500/40 border border-purple-400/60"></div>
+
+              {/* Industrial Frame Corners */}
+              <div className="absolute top-0 left-0 w-8 h-8 border-l-4 border-t-4 border-purple-500/60"></div>
+              <div className="absolute top-0 right-0 w-8 h-8 border-r-4 border-t-4 border-purple-500/60"></div>
+              <div className="absolute bottom-0 left-0 w-8 h-8 border-l-4 border-b-4 border-purple-500/60"></div>
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-r-4 border-b-4 border-purple-500/60"></div>
 
               {/* Mechanical Background Pattern */}
               <div className="absolute inset-4 opacity-5">
@@ -581,12 +724,20 @@ const About = () => {
 
             {/* Web Services Detail */}
             <div className="service-detail-right bg-black/60 backdrop-blur-sm border-2 border-gray-800 rounded-3xl p-8 relative overflow-hidden">
+              <img
+                src={img5}
+                alt="Web Development Interface"
+                className="absolute inset-0 w-full h-full object-cover opacity-5 rounded-3xl"
+              />
+
               {/* Industrial Frame */}
               <div className="absolute inset-0 border-4 border-gray-700/20 rounded-3xl"></div>
-              <div className="absolute top-2 left-2 w-4 h-4 bg-blue-500/40 border border-blue-400/60"></div>
-              <div className="absolute top-2 right-2 w-4 h-4 bg-blue-500/40 border border-blue-400/60"></div>
-              <div className="absolute bottom-2 left-2 w-4 h-4 bg-blue-500/40 border border-blue-400/60"></div>
-              <div className="absolute bottom-2 right-2 w-4 h-4 bg-blue-500/40 border border-blue-400/60"></div>
+
+              {/* Industrial Frame Corners */}
+              <div className="absolute top-0 left-0 w-8 h-8 border-l-4 border-t-4 border-blue-500/60"></div>
+              <div className="absolute top-0 right-0 w-8 h-8 border-r-4 border-t-4 border-blue-500/60"></div>
+              <div className="absolute bottom-0 left-0 w-8 h-8 border-l-4 border-b-4 border-blue-500/60"></div>
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-r-4 border-b-4 border-blue-500/60"></div>
 
               {/* Mechanical Background Pattern */}
               <div className="absolute inset-4 opacity-5">
@@ -638,7 +789,7 @@ const About = () => {
       <section ref={teamRef} className="relative py-32 overflow-hidden">
         <div className="team-bg absolute inset-0 bg-gradient-to-br from-gray-800/40 via-orange-900/20 to-cyan-900/20"></div>
         <img
-          src="/creative-team-workspace-with-designers-and-develop.png"
+          src={img6}
           alt="Creative Team"
           className="parallax-medium absolute inset-0 w-full h-full object-cover opacity-5"
         />
@@ -658,6 +809,12 @@ const About = () => {
       {/* Vision Section */}
       <section ref={visionRef} className="py-32 px-4 relative bg-gradient-to-b from-black via-gray-900 to-black">
         <div className="absolute inset-0 overflow-hidden">
+          <img
+            src={img7}
+            alt="Development Workspace"
+            className="absolute top-0 left-0 w-80 h-60 object-cover opacity-8 blur-sm"
+          />
+
           {/* Industrial Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="grid grid-cols-16 grid-rows-12 h-full w-full">
@@ -711,7 +868,7 @@ const About = () => {
           </div>
 
           <img
-            src="/futuristic-digital-landscape-with-flowing-data-str.png"
+            src={img8}
             alt="Vision Background"
             className="parallax-slow absolute top-0 right-0 w-96 h-64 object-cover opacity-10 blur-sm"
           />
@@ -776,7 +933,8 @@ const About = () => {
           </div>
         </div>
       </section>
-      <Footer />
+
+      <FooterOther />
     </div>
   )
 }

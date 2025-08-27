@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import FooterHome from "../components/FooterHome";
 import WaterWave from "react-water-wave";
 import heroImg from "../assets/hero3.png";
 
@@ -47,7 +47,7 @@ const Home = () => {
                   </h2>
                 </div>
               </section>
-              <Footer />
+              <FooterHome />
             </>
           )}
         </WaterWave>
