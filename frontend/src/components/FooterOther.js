@@ -9,11 +9,11 @@ const FooterHome = () => {
             <div className="flex items-center">
               <span className="logo">Nova</span>
             </div>
-            <p className="text-white text-sm">Digital Creative Agency</p>
+            <p className="text-white text-sm text-left">Digital Creative Agency</p>
           </div>
 
           <div>
-            <h3 className=" text-white font-semibold mb-4">Quick Links</h3>
+            <h3 className=" text-white font-semibold mb-4 text-left">Quick Links</h3>
             <ul className="space-y-2">
               <li className="flex items-center space-x-2 text-gray-600">
                 <a href="/" className="navigation-links">
@@ -39,7 +39,7 @@ const FooterHome = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Contact</h3>
+            <h3 className="text-white font-semibold mb-4 text-left">Contact</h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-2 navigation-links">
                 <Mail className="h-4 w-4" />

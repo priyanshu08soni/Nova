@@ -122,6 +122,13 @@ const Navbar = () => {
             >
              About
             </Link>
+            <Link
+              to = "services"
+              className="flex justify-center navigation-links"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+             Services
+            </Link>
           </ul>
 
           {loggedInUser && (
