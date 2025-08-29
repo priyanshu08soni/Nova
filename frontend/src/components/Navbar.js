@@ -134,7 +134,7 @@ const Navbar = () => {
           {loggedInUser && (
             <>
               <div className="px-3 py-2">
-                <div className="flex items-center space-x-2 px-4 py-2 rounded-full bg-secondary/50">
+                <div className="flex items-center justify-center space-x-2 px-4 py-2 rounded-full bg-secondary/50">
                   <User className="h-5 w-5 text-gray-600" />
                   <span className="text-sm font-medium text-gray-900">
                     {loggedInUser}
