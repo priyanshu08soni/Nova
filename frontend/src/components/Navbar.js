@@ -109,25 +109,32 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 mt-4 space-y-1 backdrop-blur-md shadow-lg rounded-2xl border border-teal-50/20">
           <ul className="space-y-2">
             <Link
-              to="/"
+              to="/home"
               className="flex justify-center navigation-links"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
-              to = "about"
+              to = "/about"
               className="flex justify-center navigation-links"
               onClick={() => setIsMobileMenuOpen(false)}
             >
              About
             </Link>
             <Link
-              to = "services"
+              to = "/services"
               className="flex justify-center navigation-links"
               onClick={() => setIsMobileMenuOpen(false)}
             >
              Services
+            </Link>
+            <Link
+              to = "/contact"
+              className="flex justify-center navigation-links"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+             Contact
             </Link>
           </ul>
 
