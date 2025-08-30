@@ -1,12 +1,6 @@
 import React from "react";
 
-import {
-  ArrowRight,
-  Github,
-  Linkedin,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import WaterWave from "react-water-wave";
 
@@ -90,7 +84,7 @@ const Contact = () => {
                         </div>
                         <div>
                           <div className="text-white text-sm">{info.label}</div>
-                          <div className="text-white font-medium group-hover:text-red-300 transition-colors">
+                          <div className="text-white font-medium group-hover:text-red-300 transition-colors break-all max-w-[280px] sm:max-w-[320px]">
                             {info.value}
                           </div>
                         </div>
