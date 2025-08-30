@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import WaterWave from "react-water-wave";
 import heroImg from "../assets/foot.jpg";
+
 const Signup = () => {
   const [signupInfo, setSignupInfo] = useState({
     name: "",
@@ -16,12 +17,12 @@ const Signup = () => {
     email: "",
   });
 
+  const [loading, setLoading] = useState(false); // 🔥 loading state
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSignupInfo((prev) => ({ ...prev, [name]: value }));
-    // Clear error for the field being changed
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
@@ -35,6 +36,7 @@ const Signup = () => {
     }
 
     try {
+      setLoading(true); // ⏳ start loading
       const response = await fetch(
         `https://quiz-app-imh9.onrender.com/auth/signup`,
         {
@@ -50,7 +52,6 @@ const Signup = () => {
         toast.success(result.message);
         setTimeout(() => navigate("/login"), 1000);
       } else if (response.status === 409) {
-        // Conflict (email or username already exists)
         if (result.message.toLowerCase().includes("email")) {
           setErrors((prev) => ({ ...prev, email: result.message }));
         } else if (result.message.toLowerCase().includes("username")) {
@@ -61,6 +62,8 @@ const Signup = () => {
       }
     } catch (err) {
       toast.error("An error occurred during signup");
+    } finally {
+      setLoading(false); // ✅ stop loading
     }
   };
 
@@ -77,7 +80,7 @@ const Signup = () => {
       }}
     >
       {() => (
-        <div className=" sign-up backdrop-blur-sm border border-teal-50/20 rounded-2xl py-8 px-4">
+        <div className="sign-up backdrop-blur-sm border border-teal-50/20 rounded-2xl py-8 px-4">
           <div className="sm:mx-auto sm:w-full sm:max-w-md px-12">
             <div className="flex justify-center">
               <span className="logo">Nova</span>
@@ -132,7 +135,7 @@ const Signup = () => {
                     required
                     value={signupInfo.username}
                     onChange={handleChange}
-                    className={`caret-gray-500 mt-1 block w-full rounded-xl border px-3 py-2 focus:border-teal-50/20 focus:outline-none focus:ring-1 focus:ring-teal-50/20 ${
+                    className={`caret-gray-500 mt-1 block w-full rounded-xl border px-3 py-2 focus:border-teal-50/20 focus:outline-none focus:ring-1 ${
                       errors.username ? "border-red-500" : "border-gray-300"
                     }`}
                   />
@@ -159,7 +162,7 @@ const Signup = () => {
                     required
                     value={signupInfo.email}
                     onChange={handleChange}
-                    className={`caret-gray-500 mt-1 block w-full rounded-xl border px-3 py-2 focus:border-teal-50/20 focus:outline-none focus:ring-1 focus:ring-teal-50/20 ${
+                    className={`caret-gray-500 mt-1 block w-full rounded-xl border px-3 py-2 focus:border-teal-50/20 focus:outline-none focus:ring-1 ${
                       errors.email ? "border-red-500" : "border-gray-300"
                     }`}
                   />
@@ -184,21 +187,49 @@ const Signup = () => {
                     required
                     value={signupInfo.password}
                     onChange={handleChange}
-                    className="caret-gray-500 mt-1 block w-full rounded-xl border px-3 py-2 focus:border-teal-50/20 focus:outline-none focus:ring-1 focus:ring-teal-50/20"
+                    className="caret-gray-500 mt-1 block w-full rounded-xl border px-3 py-2 focus:border-teal-50/20 focus:outline-none focus:ring-1"
                   />
                 </div>
 
-                {/* Submit */}
-                <div className="py-2">
-                  <button
-                    type="submit"
-                    className=" w-full user-pill flex items-center justify-center px-4 py-3 rounded-full bg-secondary/50"
-                  >
-                    <span className="label text-sm font-medium text-white">
-                      Sign up
-                    </span>
-                  </button>
-                </div>
+               {/* Submit */}
+<div className="py-2">
+  <button
+    type="submit"
+    disabled={loading} // ⛔ prevent double submit
+    className={`w-full user-pill flex items-center justify-center px-4 py-3 rounded-full ${
+      loading
+        ? "bg-gray-500 cursor-not-allowed"
+        : "bg-secondary/50 hover:bg-secondary/70"
+    }`}
+  >
+    {loading ? (
+      // 🔥 Loader spinner
+      <svg
+        className="animate-spin h-5 w-5 text-white"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          className="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          strokeWidth="4"
+        ></circle>
+        <path
+          className="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+        ></path>
+      </svg>
+    ) : (
+      <span className="label text-sm font-medium text-white">Sign up</span>
+    )}
+  </button>
+</div>
+
               </form>
             </div>
           </div>
