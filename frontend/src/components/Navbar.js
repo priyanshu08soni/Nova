@@ -29,7 +29,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-10 left-10 right-10 z-50 backdrop-blur-sm">
+    <nav className="fixed right-3 left-3 top-3 md:top-10 md:left-10 md:right-10  z-50 backdrop-blur-sm">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 rounded-xl border border-teal-100/20">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-8">

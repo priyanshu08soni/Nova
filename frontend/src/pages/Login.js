@@ -80,7 +80,7 @@ const Login = () => {
       }}
     >
       {() => (
-        <div className="login backdrop-blur-sm border border-teal-50/20 rounded-2xl py-8 px-4">
+        <div className="login py-8 px-4">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
             <div>
               <div className="flex justify-center">

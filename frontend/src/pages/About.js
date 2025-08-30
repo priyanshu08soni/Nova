@@ -301,7 +301,7 @@ const About = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-black">
+      <section ref={heroRef} className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center bg-black">
         <div className="absolute inset-0 overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-800">
           <img
             src={img1}
@@ -435,8 +435,8 @@ const About = () => {
           <div className="parallax-medium absolute bottom-1/3 right-1/3 w-16 h-16 bg-gradient-radial from-orange-500/10 to-transparent rounded-full blur-lg"></div>
         </div>
 
-        <div className="text-center z-10 px-4 relative">
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm rounded-3xl border border-gray-700/30"></div>
+        <div className="text-center z-10 relative">
+          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm md:rounded-3xl border border-gray-700/30"></div>
           <div className="relative z-10 p-8">
             <h1 className="hero-title text-5xl sm:text-7xl font-extrabold mb-6 bg-gradient-to-r from-orange-400 via-gray-100 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(249,115,22,0.6)] font-mono tracking-wider">
               PRECISION ENGINEERING
@@ -450,7 +450,7 @@ const About = () => {
             </p>
 
             {/* Industrial Status Indicators */}
-            <div className="flex justify-center gap-8 mt-8">
+            <div className="flex justify-center gap-8 mt-8 flex-wrap">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-green-400 font-mono text-sm">SYSTEMS ONLINE</span>

@@ -38,7 +38,7 @@ const Home = () => {
                   width: "100%",
                 }}
               >
-                <div className="backdrop-blur-sm p-8 rounded-2xl inline-block shadow-xl">
+                <div className="md:backdrop-blur-sm p-8 rounded-2xl inline-block md:shadow-xl">
                   <h1 className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-white to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]">
                     YOUR VISION, OUR CREATION
                   </h1>
