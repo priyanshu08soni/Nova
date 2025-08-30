@@ -23,6 +23,7 @@ body {
 }
 .logo{
   letter-spacing: 5px;
+  font-family: "Permanent Marker", cursive;
   background: linear-gradient(
   to right, 
   rgb(255, 255, 255), 
