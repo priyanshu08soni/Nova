@@ -38,7 +38,7 @@ const Signup = () => {
     try {
       setLoading(true); // ⏳ start loading
       const response = await fetch(
-        `https://quiz-app-imh9.onrender.com/auth/signup`,
+        `https://nova-qr37.onrender.com/auth/signup`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
