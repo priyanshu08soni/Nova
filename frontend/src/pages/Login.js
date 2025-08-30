@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import WaterWave from "react-water-wave";
 import heroImg from "../assets/foot.jpg";
+
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({
     email: "",
@@ -14,12 +15,12 @@ const Login = () => {
     password: "",
   });
 
+  const [loading, setLoading] = useState(false); // 👈 loading state
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLoginInfo((prev) => ({ ...prev, [name]: value }));
-    // Clear field-specific error on change
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
@@ -32,6 +33,7 @@ const Login = () => {
       return;
     }
 
+    setLoading(true); // 👈 Start loading
     try {
       const response = await fetch(
         `https://quiz-app-imh9.onrender.com/auth/login`,
@@ -54,13 +56,14 @@ const Login = () => {
         localStorage.setItem("username", username);
         setTimeout(() => navigate("/"), 1000);
       } else if (!success && field) {
-        // Show field-specific error
         setErrors((prev) => ({ ...prev, [field]: message }));
       } else {
         toast.error(message || "Login failed");
       }
     } catch (err) {
       toast.error("An error occurred during login");
+    } finally {
+      setLoading(false); // 👈 Stop loading after success/error
     }
   };
 
@@ -154,11 +157,35 @@ const Login = () => {
                 <div className="py-2">
                   <button
                     type="submit"
-                    className=" w-full user-pill flex items-center justify-center px-4 py-3 rounded-full bg-secondary/50"
+                    disabled={loading} 
+                    className="w-full user-pill flex items-center justify-center px-4 py-3 rounded-full bg-secondary/50 disabled:opacity-50"
                   >
-                    <span className="label text-sm font-medium text-white">
-                      Sign in
-                    </span>
+                    {loading ? (
+                      <svg
+                        className="animate-spin h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v8z"
+                        ></path>
+                      </svg>
+                    ) : (
+                      <span className="label text-sm font-medium text-white">
+                        Sign in
+                      </span>
+                    )}
                   </button>
                 </div>
 
