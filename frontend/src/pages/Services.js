@@ -131,7 +131,7 @@ const Services = () => {
         >
           <h1
             className="text-4xl md:text-7xl px-4 drop-shadow-2xl mb-6 mt-40 text-balance
-               bg-gradient-to-r from-white via-orange-400 to-purple-600 
+               bg-gradient-to-r from-orange-500 via-orange-400 to-purple-600 
                bg-clip-text text-transparent"
           >
             Where Creativity Meets Strategy
@@ -139,7 +139,7 @@ const Services = () => {
 
           <h1
             className="text-4xl md:text-7xl px-4 drop-shadow-2xl mt-6 mb-16 text-balance
-               bg-gradient-to-r from-white via-orange-400 to-purple-600 
+               bg-gradient-to-r from-orange-500 via-orange-400 to-purple-600 
                bg-clip-text text-transparent"
           >
             Design . Inspire . Deliver
