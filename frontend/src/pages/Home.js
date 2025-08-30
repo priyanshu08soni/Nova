@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import FooterHome from "../components/FooterHome";
 import WaterWave from "react-water-wave";
-import heroImg from "../assets/hero3.png";
+import heroImg from "../assets/hero4.png";
 
 const Home = () => {
   return (
@@ -32,19 +32,16 @@ const Home = () => {
               <section
                 className="flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 relative z-10 text-center"
                 style={{
-                  top: "30%",
+                  top: "20%",
                   transform: "translateY(-50%)",
                   position: "absolute",
                   width: "100%",
                 }}
               >
-                <div className="md:backdrop-blur-sm p-8 rounded-2xl inline-block md:shadow-xl">
+                <div className="p-8">
                   <h1 className="hero-heading text-5xl sm:text-6xl font-bold mb-6 drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]">
                     YOUR VISION, OUR CREATION
                   </h1>
-                  <h2 className="hero-heading text-4xl sm:text-5xl font-bold mb-6 drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]">
-                    WEBSITES • ADS • BEYOND
-                  </h2>
                 </div>
               </section>
               <FooterHome />
