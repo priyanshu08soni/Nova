@@ -64,18 +64,16 @@ const ServicesCard = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className={`snap-center flex-shrink-0 flex items-center backdrop-blur-sm border border-gray-500/20 rounded-xl p-5 ${service.bgColor} w-[90vw] max-w-[450px]`}
+            className={`snap-center flex-shrink-0 flex flex-col md:flex-row items-center backdrop-blur-sm border border-gray-500/20 rounded-xl p-5 ${service.bgColor} w-[90vw] max-w-[450px]`}
           >
-            <div className="left mr-4 flex-shrink-0">
+            <div className="left md:mr-4 flex-shrink-0 ">
               {/* This is the corrected part for CRA */}
 
               <img
                 src={service.bgImage} // This works directly in CRA
                 alt={service.title}
-                className="rounded-xl w-32 h-32 md:w-40 md:h-40 object-cover"
+                className="rounded-xl w-80 h-32 md:w-40 md:h-40 object-cover"
                 loading="lazy" // 1. Add lazy loading
-                width="160"     // 2. Specify dimensions to prevent layout shift
-                height="160"
               />
             </div>
             <div className="right">

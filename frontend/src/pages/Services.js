@@ -71,7 +71,7 @@ const Services = () => {
 
         {/* Scroll to explore */}
         <motion.div
-          className="w-full absolute bottom-0 flex flex-col items-center justify-center text-white/80 z-50 p-10"
+          className="w-full absolute bottom-0 flex flex-col items-center justify-center text-white/80 z-50 p-24"
           style={{ opacity: scrollToExploreOpacity }}
         >
           <span className="text-sm mb-2">Scroll to explore</span>
@@ -91,7 +91,7 @@ const Services = () => {
           className="w-full flex justify-center items-center h-full pb-40"
         >
           <h1
-            className="text-7xl md:text-8xl drop-shadow-2xl px-4 mb-6 text-balance 
+            className=" text-6xl md:text-8xl drop-shadow-2xl px-4 mb-6 text-balance 
                bg-gradient-to-r from-white via-orange-400 to-purple-600 
                bg-clip-text text-transparent text-center"
           >
@@ -110,13 +110,13 @@ const Services = () => {
           className="max-w-4xl"
         >
           <h1
-            className="text-7xl md:text-8xl drop-shadow-2xl px-4 mb-6 text-balance 
+            className="text-6xl md:text-8xl drop-shadow-2xl px-4 mb-6 text-balance 
                bg-gradient-to-r from-white via-orange-400 to-purple-600 
                bg-clip-text text-transparent"
           >
             Our Services
           </h1>
-          <p className="text-xl md:text-2xl px-4 text-white">
+          <p className="text-md md:text-2xl px-4 text-white">
             We craft digital experiences that inspire, engage, and deliver
             exceptional results for your brand
           </p>
@@ -130,7 +130,7 @@ const Services = () => {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <h1
-            className="text-6xl md:text-7xl px-4 drop-shadow-2xl mb-6 mt-40 text-balance
+            className="text-4xl md:text-7xl px-4 drop-shadow-2xl mb-6 mt-40 text-balance
                bg-gradient-to-r from-white via-orange-400 to-purple-600 
                bg-clip-text text-transparent"
           >
@@ -138,7 +138,7 @@ const Services = () => {
           </h1>
 
           <h1
-            className="text-6xl md:text-7xl px-4 drop-shadow-2xl mt-6 mb-16 text-balance
+            className="text-4xl md:text-7xl px-4 drop-shadow-2xl mt-6 mb-16 text-balance
                bg-gradient-to-r from-white via-orange-400 to-purple-600 
                bg-clip-text text-transparent"
           >
