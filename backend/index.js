@@ -5,11 +5,17 @@ const mongoose = require("mongoose");
 const authRouter = require('./controllers/authController'); // Make sure this points to the correct file
 const app = express();
 
+
+// Use middleware
+app.use(cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+}))
+
 mongoose.set('strictQuery', false)
 mongoose.connect(process.env.MONGO_URL, () => console.log('DB is successfully connected'))
 
-// Use middleware
-app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
