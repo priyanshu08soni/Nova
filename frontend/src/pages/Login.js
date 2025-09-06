@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import WaterWave from "react-water-wave";
-import heroImg from "../assets/foot.jpg";
 import { API_PATHS } from "../utils";
 
 const Login = () => {
@@ -70,7 +69,7 @@ const Login = () => {
 
   return (
     <WaterWave
-      imageUrl={heroImg}
+      imageUrl="/auth/foot.png"
       className="h-screen bg-cover flex justify-center items-center"
       options={{
         perturbance: 0.01,

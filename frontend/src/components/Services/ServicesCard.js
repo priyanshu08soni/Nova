@@ -1,20 +1,13 @@
 "use client";
 import React from "react";
 
-// Import your image assets
-import img1 from "../assets/video1.png";
-import img2 from "../assets/video2.png";
-import img3 from "../assets/video3.png";
-import img4 from "../assets/video4.png";
-import img5 from "../assets/video5.png";
-
 const services = [
   {
     title: "Video Editing",
     description:
       "Transform raw footage into cinematic masterpieces with professional editing, color grading, and seamless transitions that captivate your audience.",
     icon: "🎬",
-    bgImage: img1,
+    bgImage: "/services/video1.png",
     bgColor: "bg-gradient-to-br from-orange-200 to-pink-200",
     textColor: "text-gray-800", // 5. Adjusted text color for better readability
   },
@@ -23,7 +16,7 @@ const services = [
     description:
       "Build lightning-fast, responsive websites and web applications using cutting-edge technologies that deliver exceptional user experiences.",
     icon: "💻",
-    bgImage: img2,
+    bgImage: "/services/video2.png",
     bgColor: "bg-gradient-to-br from-purple-200 to-pink-200",
     textColor: "text-gray-800",
   },
@@ -32,7 +25,7 @@ const services = [
     description:
       "Create stunning visual identities, logos, and brand assets that make lasting impressions and communicate your message effectively.",
     icon: "🎨",
-    bgImage: img3,
+    bgImage: "/services/video3.png",
     bgColor: "bg-gradient-to-br from-yellow-200 to-orange-200",
     textColor: "text-gray-800",
   },
@@ -41,7 +34,7 @@ const services = [
     description:
       "Amplify your brand's reach with data-driven marketing strategies, social media campaigns, and targeted advertising that converts.",
     icon: "📈",
-    bgImage: img4,
+    bgImage: "/services/video4.png",
     bgColor: "bg-gradient-to-br from-pink-200 to-purple-200",
     textColor: "text-gray-800",
   },
@@ -50,7 +43,7 @@ const services = [
     description:
       "Craft compelling promotional content and advertising campaigns that stop the scroll and drive meaningful engagement with your brand.",
     icon: "🎥",
-    bgImage: img5,
+    bgImage: "/services/video5.png",
     bgColor: "bg-gradient-to-br from-orange-200 to-yellow-200",
     textColor: "text-gray-800",
   },

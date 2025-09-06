@@ -1,10 +1,9 @@
 import React from "react";
 
 import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import WaterWave from "react-water-wave";
 
-import heroImg from "../assets/foot.jpg";
 import { Link } from "react-router-dom";
 const contactInfo = [
   {
@@ -40,7 +39,7 @@ const Contact = () => {
   return (
     <div className="relative">
       <WaterWave
-        imageUrl={heroImg}
+        imageUrl="/auth/foot.png"
         style={{
           height: "100vh",
           width: "100vw",

@@ -1,8 +1,7 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import FooterHome from "../components/FooterHome";
+import Navbar from "../components/Layout/Navbar";
+import FooterHome from "../components/Layout/Footer/FooterHome";
 import WaterWave from "react-water-wave";
-import heroImg from "../assets/hero4.png";
 
 const Home = () => {
   return (
@@ -12,7 +11,7 @@ const Home = () => {
       {/* Hero Section with WaterWave */}
       <div className="relative w-full">
         <WaterWave
-          imageUrl={heroImg}
+          imageUrl="/hero/hero4.png"
           className="w-full"
           style={{
             height: "200vh",

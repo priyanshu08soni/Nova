@@ -1,6 +1,6 @@
 import React from "react";
-import ContactDesktop from "../components/ContactDesktop"
-import ContactMobile from "../components/ContactMobile"
+import ContactDesktop from "../components/Contact.js/ContactDesktop"
+import ContactMobile from "../components/Contact.js/ContactMobile"
 const Contact = () => {
   return (
     <>

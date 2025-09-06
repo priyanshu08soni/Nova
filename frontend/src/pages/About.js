@@ -3,18 +3,11 @@ import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Lenis from "lenis"
-import Navbar from "../components/Navbar"
-import FooterOther from "../components/FooterOther"
-import MechanicalCursorFollower from "../components/MechanicalCursorFollower"
-import FloatingMechanicalElements from "../components/FloatingMechanicalElements"
-import img1 from '../assets/modern-web-development-workspace-with-multiple-mon.png'
-import img2 from '../assets/modern-laptop-with-code-editor-and-responsive-desi.png';
-import img3 from '../assets/professional-video-editing-setup-with-timeline-and.png';
-import img4 from '../assets/professional-video-production-setup-with-cameras-l.png';
-import img5 from '../assets/clean-modern-website-interface-with-responsive-des.png';
-import img6 from '../assets/creative-team-workspace-with-designers-and-develop.png';
-import img7 from '../assets/modern-web-development-workspace-with-multiple-mon.png';
-import img8 from '../assets/futuristic-digital-landscape-with-flowing-data-str.png';
+import Navbar from "../components/Layout/Navbar"
+import FooterOther from "../components/Layout/Footer/FooterOther"
+import MechanicalCursorFollower from "../components/About.js/MechanicalCursorFollower"
+import FloatingMechanicalElements from "../components/About.js/FloatingMechanicalElements"
+
 // Register GSAP plugins
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -304,7 +297,7 @@ const About = () => {
       <section ref={heroRef} className="relative min-h-screen pt-24 md:pt-0 flex items-center justify-center bg-black">
         <div className="absolute inset-0 overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-800">
           <img
-            src={img1}
+            src="/about/modern-web-development-workspace-with-multiple-mon.png"
             alt="Industrial Workspace"
             className="absolute inset-0 w-full h-full object-cover opacity-15 blur-sm"
           />
@@ -529,7 +522,7 @@ const About = () => {
 
                 <div className="relative mb-6">
                   <img
-                    src={img2}
+                    src="/about/modern-laptop-with-code-editor-and-responsive-desi.png"
                     alt="Web Development"
                     className="w-full h-32 object-cover rounded-xl border border-gray-600 opacity-80"
                   />
@@ -601,7 +594,7 @@ const About = () => {
 
                 <div className="relative mb-6">
                   <img
-                    src={img3}
+                    src="/about/professional-video-editing-setup-with-timeline-and.png"
                     alt="Video Editing"
                     className="w-full h-32 object-cover rounded-xl border border-gray-600 opacity-80"
                   />
@@ -663,7 +656,7 @@ const About = () => {
             {/* Video Services Detail */}
             <div className="service-detail-left bg-black/60 backdrop-blur-sm border-2 border-gray-800 rounded-3xl p-8 relative overflow-hidden">
               <img
-                src={img4}
+                src="/about/professional-video-production-setup-with-cameras-l.png"
                 alt="Video Production Setup"
                 className="absolute inset-0 w-full h-full object-cover opacity-5 rounded-3xl"
               />
@@ -725,7 +718,7 @@ const About = () => {
             {/* Web Services Detail */}
             <div className="service-detail-right bg-black/60 backdrop-blur-sm border-2 border-gray-800 rounded-3xl p-8 relative overflow-hidden">
               <img
-                src={img5}
+                src="/about/clean-modern-website-interface-with-responsive-des.png"
                 alt="Web Development Interface"
                 className="absolute inset-0 w-full h-full object-cover opacity-5 rounded-3xl"
               />
@@ -789,7 +782,7 @@ const About = () => {
       <section ref={teamRef} className="relative py-32 overflow-hidden">
         <div className="team-bg absolute inset-0 bg-gradient-to-br from-gray-800/40 via-orange-900/20 to-cyan-900/20"></div>
         <img
-          src={img6}
+          src="/about/creative-team-workspace-with-designers-and-develop.png"
           alt="Creative Team"
           className="parallax-medium absolute inset-0 w-full h-full object-cover opacity-5"
         />
@@ -810,7 +803,7 @@ const About = () => {
       <section ref={visionRef} className="py-32 px-4 relative bg-gradient-to-b from-black via-gray-900 to-black">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src={img7}
+            src="/about/modern-web-development-workspace-with-multiple-mon.png"
             alt="Development Workspace"
             className="absolute top-0 left-0 w-80 h-60 object-cover opacity-8 blur-sm"
           />
@@ -868,7 +861,7 @@ const About = () => {
           </div>
 
           <img
-            src={img8}
+            src="/about/futuristic-digital-landscape-with-flowing-data-str.png"
             alt="Vision Background"
             className="parallax-slow absolute top-0 right-0 w-96 h-64 object-cover opacity-10 blur-sm"
           />
