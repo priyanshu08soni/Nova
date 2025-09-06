@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import WaterWave from "react-water-wave";
 import heroImg from "../assets/foot.jpg";
+import { API_PATHS } from "../utils";
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({
@@ -36,7 +37,7 @@ const Login = () => {
     setLoading(true); // 👈 Start loading
     try {
       const response = await fetch(
-        `https://nova-qr37.onrender.com/auth/login`,
+        API_PATHS.AUTH.LOGIN,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

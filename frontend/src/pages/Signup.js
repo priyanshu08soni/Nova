@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import WaterWave from "react-water-wave";
 import heroImg from "../assets/foot.jpg";
+import { API_PATHS } from "../utils";
 
 const Signup = () => {
   const [signupInfo, setSignupInfo] = useState({
@@ -38,7 +39,7 @@ const Signup = () => {
     try {
       setLoading(true); // ⏳ start loading
       const response = await fetch(
-        `https://nova-qr37.onrender.com/auth/signup`,
+        API_PATHS.AUTH.REGISTER,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
