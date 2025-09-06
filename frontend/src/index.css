@@ -1,1 +1,124 @@
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Global Styles */
+#root{
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  font-style:normal;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  min-height: 100vh;
+}
+.logo{
+  letter-spacing: 5px;
+  font-family: "Permanent Marker", cursive;
+  background: linear-gradient(
+  to right, 
+  rgb(255, 255, 255), 
+  rgb(97, 123, 255), 
+  rgb(97, 200, 255)
+);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 1.875rem; /* equivalent to text-3xl in Tailwind */
+}
+
+/* Navigation */
+.navigation-links{
+  color: whitesmoke;
+  padding: 0;
+  transition: padding 0.5s ease;
+  /* text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium */
+}
+.navigation-links:hover{
+  padding: 5px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgb(255, 255, 255), rgb(166, 136, 211), rgb(97, 200, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Smooth gradient hover for the user pill */
+.user-pill {
+  position: relative;
+  overflow: hidden;            /* hide the overlay edges */
+  border-radius: 9999px;       /* keep the pill shape */
+}
+
+.user-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #ffffff, #7e76ba, #61c8ff);
+  opacity: 0;
+  transition: opacity 400ms ease;
+  pointer-events: none;        /* don't block clicks */
+}
+
+/* Fade the gradient in on hover */
+.user-pill:hover::before {
+  opacity: 1;
+}
+
+/* Ensure text/icons stay visible above the overlay and change color */
+.user-pill .icon,
+.user-pill .label {
+  position: relative;
+  z-index: 1;
+  transition: color 300ms ease;
+  color: white;
+}
+
+.user-pill:hover .icon,
+.user-pill:hover .label {
+  color: #fff;
+}
+.hero-heading{
+  font-family: "Permanent Marker", cursive;
+  color: black;
+  padding: 0;
+  
+  transition: padding 0.5s ease;
+  /* text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium */
+}
+.hero-heading:hover{
+  padding: 5px;
+  border-radius: 10px;
+}
+.hero-wave {
+  background-size: cover !important;   /* keep aspect ratio, fill screen */
+  background-position: center !important; /* center image */
+  background-repeat: no-repeat !important;
+}
+@keyframes waveMotion {
+  0% { backdrop-filter: blur(4px); }
+  50% { backdrop-filter: blur(10px); }
+  100% { backdrop-filter: blur(4px); }
+}
+
+.blur-wave {
+  animation: waveMotion 6s ease-in-out infinite;
+}
+
+/* Services */
+.services{
+  background-color: #0f2341;
+}
+.contact-head{
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  
+}

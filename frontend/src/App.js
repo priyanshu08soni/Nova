@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import "./App.css";
 import { useEffect, useState } from "react";
 import RefreshHandler from "./RefrshHandler";
 import Login from "./pages/Login";
