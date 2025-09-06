@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import WaterWave from "react-water-wave";
 
 import { Link } from "react-router-dom";

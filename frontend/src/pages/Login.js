@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import WaterWave from "react-water-wave";
-import { API_PATHS } from "../utils";
+import { API_PATHS } from "../lib/utils";
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({
