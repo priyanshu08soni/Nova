@@ -1,7 +1,9 @@
+const dotenv = require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv').config();
 const mongoose = require("mongoose");
+const connectDB = require('./config/db');
+
 const authRouter = require('./controllers/authController'); // Make sure this points to the correct file
 const app = express();
 
@@ -13,8 +15,10 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"],
 }))
 
-mongoose.set('strictQuery', false)
-mongoose.connect(process.env.MONGO_URL, () => console.log('DB is successfully connected'))
+mongoose.set('strictQuery', false);
+
+connectDB();
+
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))

@@ -1,9 +1,10 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require("../models/User");
+const { signupValidation, loginValidation } = require('../middlewares/AuthValidation');
 const authController = require('express').Router();
 
-authController.post('/signup', async(req, res) => {
+authController.post('/signup', signupValidation, async(req, res) => {
     try {
         // Validate required fields
         if (!req.body.email || !req.body.password || !req.body.name || !req.body.username) {
@@ -56,7 +57,7 @@ authController.post('/signup', async(req, res) => {
     }
 })
 
-authController.post('/login', async (req, res) => {
+authController.post('/login', loginValidation , async (req, res) => {
     try {
         const { email, password } = req.body;
 
