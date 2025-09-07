@@ -10,7 +10,10 @@ const app = express();
 
 // Use middleware
 app.use(cors({
-    origin: "*",
+    origin: [
+        "https://nova-creativity-at-its-peak.vercel.app",
+        "http://localhost:3000"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }))
