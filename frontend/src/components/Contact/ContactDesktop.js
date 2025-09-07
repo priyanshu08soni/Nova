@@ -45,7 +45,7 @@ const Contact = () => {
   return (
     <div className="relative">
       <WaterWave
-        imageUrl="/auth/foot.png"
+        imageUrl="/auth/foot.jpg"
         style={{
           height:"100vh",
           width:"100vw",
