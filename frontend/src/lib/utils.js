@@ -5,7 +5,7 @@ export function cn(...inputs) {
   return twMerge(clsx(inputs))
 }
 
-export const BASE_URL = "https://nova-qr37.onrender.com";
+export const BASE_URL = "https://nova-b6kv.vercel.app";
 export const API_PATHS = {
     AUTH:{
         REGISTER: `${BASE_URL}/auth/signup`,
