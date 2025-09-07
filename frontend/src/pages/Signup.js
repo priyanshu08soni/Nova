@@ -69,7 +69,7 @@ const Signup = () => {
 
   return (
     <WaterWave
-      imageUrl="/auth/foot.png"
+      imageUrl="/auth/foot.jpg"
       className="h-screen bg-cover flex justify-center items-center"
       options={{
         perturbance: 0.01,
